@@ -1,0 +1,5 @@
+# Exclude Node Modules
+node_modules/
+.DS_Store
+# Exclude Visual Studio Code
+.vscode/

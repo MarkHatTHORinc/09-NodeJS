@@ -1,0 +1,23 @@
+{
+  "name": "09-nodejs",
+  "version": "1.0.0",
+  "description": "Generate a README.md file",
+  "main": "README_Generator.js",
+  "scripts": {
+    "test": "node README_Generator"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkHatTHORinc/09-NodeJS.git"
+  },
+  "keywords": [
+    "Generate",
+    "README"
+  ],
+  "author": "Mark S Harrison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkHatTHORinc/09-NodeJS/issues"
+  },
+  "homepage": "https://github.com/MarkHatTHORinc/09-NodeJS#readme"
+}
