@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MarkHatTHORinc/09-NodeJS/issues"
   },
-  "homepage": "https://github.com/MarkHatTHORinc/09-NodeJS#readme"
+  "homepage": "https://github.com/MarkHatTHORinc/09-NodeJS#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }

@@ -1,0 +1,11 @@
+# MY PROJECT
+
+![badge](https://img.shields.io/badge/license-***********-blue)
+
+## Description
+
+DESC 1
+DESC 2
+
+```md
+The app should operate within the following requirements:

@@ -1,35 +1,17 @@
-# Server Side APIs: Weather Dashboard
+<<projectTitle@@input>>What is your project title (DONE/BREAK)?
+# %#projectTitle#%
+
+![badge](https://img.shields.io/badge/license-%#license#%-blue)
 
 ## Description
 
-This project was to build a web app that will use the OpenWeather API to populate a Weather Dashboard. The app will feature dynamically updated HTML and CSS. It will use `localStorage` to store any persistent data.
+<<description@@input>>What is your project description (DONE/BREAK)?
+%#description#%
 
 ```md
 The app should operate within the following requirements:
-1. The user can search a city and be shown:
-    * Current weather conditions for that city.
-    * A 5-day forecast for that city.
-2. The block that displays the current weather conditions should show:
-    * the city name 
-    * the date 
-    * an icon representation of weather conditions 
-    * the temperature
-    * the humidity
-    * the wind speed
-    * the UV index
-        * presented with a color that indicates whether the conditions are favorable, moderate, or severe
-3. The block that displays the 5-day forecast should show:
-    * the date
-    * an icon representation of weather conditions
-    * the temperature
-    * the humidity
-4. Searched City History will be displayed
-    * When the user clicks on a city in the Searched City History the current and 5-day forecast for that city should be displayed.
-    * Cities should be listed alphabetically and only once in the Searched City History
-5.  The search city entered should be:
-    * Capitalized appropriately
-    * Prompted for corrections for entries that don't return weather
-    * Displayed in the Searched City History
+<<requirements@@input>>What are the project requirements (DONE/BREAK)?
+%#requirements#%
 ```
 ## Table of Contents
 
@@ -47,24 +29,20 @@ The app should operate within the following requirements:
 
 ```md
 The following steps should be used to install:
-1. Push code to GitHub repository
-    * git add -A
-    * git committ -m "descriptive message"
-    * git push
-2. Select the Settings in GitHub
-    * Scroll down to the GitHub Pages section
-    * Under Source select to use main branch as source
+<<installSteps>>What are the installation steps (DONE/BREAK)?
+%#installSteps#%
 ```
 
 ## Usage 
 
+<<usageURL>>What are the usage URLs (DONE/BREAK)?
 Navigate to:
-[https://markhatthorinc.github.io/06-Server-Side-APIs/](https://markhatthorinc.github.io/06-Server-Side-APIs/)
+[%#usageURL#%](%#usageURL#%)
 
 **Images of App:**
-![Weather Dashboard on Initial Load](./assets/images/WeatherDashboard_Initial.png)
-![Weather Dashboard with One City](./assets/images/WeatherDashboard_OneCity.png)
-![Weather Dashboard with Multiple Cities](./assets/images/WeatherDashboard_MultipleCities.png)
+<<imageDescription>>What is Image Description (DONE/BREAK)?
+<<imagePath>>What is Image Path (DONE/BREAK)?
+![%#imageDescription#%](%#imagePath#%)
 
 
 ## Credits
@@ -74,7 +52,8 @@ Trilogy Education Services, LLC, a 2U, Inc. brand
 
 ## License
 
-MIT License
+<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
+%#license#% license
 
 Copyright (c) 2021 Mark S. Harrison
 
@@ -97,13 +76,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Badges
-
-![badgeGT](https://img.shields.io/static/v1?label=%3CGT%20Bootcamp%3E&message=06-Server-Side-APIs&color=blue)
-![badgeCourse](https://img.shields.io/static/v1?label=%3CCourse%20Work%3E&message=06-Homework&color=blue)
+<<badgeName>>What is Badge Name (DONE/BREAK)?
+<<badgeMessage>>What is Badge Message (DONE/BREAK)?
+![%#badgeName#%](https://img.shields.io/static/v1?label=%3CGT%20Bootcamp%3E&message=%#badgeMessage#%&color=blue)
 
 ## Features
-
-There are no special features on this page.
+<<features>>Are there any special features (DONE/BREAK)?
+%#features#%
 
 ## Contributing
 
