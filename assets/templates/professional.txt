@@ -1,15 +1,15 @@
-<<projectTitle@@input>>What is your project title (DONE/BREAK)?
-<<description@@input>>What is your project description (DONE/BREAK)?
-<<installSteps>>What are the installation steps (DONE/BREAK)?
-<<usage>>How do you run this (DONE/BREAK)?
-<<contributors>>Who are the contributors (DONE/BREAK)?
-<<contributorsURL>>What are the GitHub links for the contributors (DONE/BREAK)?
+<<projectTitle@@input>>What is your project title?
+<<description@@input>>What is your project description?
+<<installSteps>>What are the installation steps?
+<<usage>>How do you run this?
+<<contributors>>Who are the contributors?
+<<contributorsURL>>What are the GitHub links for the contributors?
 <<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
-<<badgeName>>What is Badge Name (DONE/BREAK)?
-<<badgeMessage>>What is Badge Message (DONE/BREAK)?
-<<gitHubUser>>What is your gitHub User Name (DONE/BREAK)?
-<<email>>What is your email address (DONE/BREAK)?
-<<tests>>What are the tests (DONE/BREAK)?
+<<badgeName>>What is Badge Name?
+<<badgeMessage>>What is Badge Message?
+<<gitHubUser>>What is your gitHub User Name?
+<<email>>What is your email address?
+<<tests>>What are the tests?
 # %#projectTitle#%
 
 ![license](https://img.shields.io/badge/license-%#license#%-blue)
@@ -31,8 +31,8 @@ The following steps should be used to install:
 ## Usage
 %#usage#%
     ```md
-    <<imageDescription>>What is Image Description (DONE/BREAK)?
-    <<imagePath>>What is Image Path (DONE/BREAK)?
+    <<imageDescription>>What is Image Description?
+    <<imagePath>>What is Image Path?
     ![%#imageDescription#%](%#imagePath#%)
     ```
 ## Credits

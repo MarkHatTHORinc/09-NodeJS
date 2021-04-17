@@ -35,13 +35,13 @@ The following steps should be used to install:
 
 ## Usage 
 
-<<usageURL>>What are the usage URLs (DONE/BREAK)?
+<<usageURL>>What are the usage URLs?
 Navigate to:
 [%#usageURL#%](%#usageURL#%)
 
 **Images of App:**
-<<imageDescription>>What is Image Description (DONE/BREAK)?
-<<imagePath>>What is Image Path (DONE/BREAK)?
+<<imageDescription>>What is Image Description?
+<<imagePath>>What is Image Path?
 ![%#imageDescription#%](%#imagePath#%)
 
 
@@ -52,7 +52,7 @@ Trilogy Education Services, LLC, a 2U, Inc. brand
 
 ## License
 
-<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
+<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing?
 %#license#% license
 
 Copyright (c) 2021 Mark S. Harrison
@@ -77,23 +77,23 @@ SOFTWARE.
 
 ## Badges
 
-<<badgeName>>What is Badge Name (DONE/BREAK)?
-<<badgeMessage>>What is Badge Message (DONE/BREAK)?
+<<badgeName>>What is Badge Name?
+<<badgeMessage>>What is Badge Message?
 ![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
 
 ## Features
 
-<<features>>Are there any special features (DONE/BREAK)?
+<<features>>Are there any special features""?
 %#features#%
 
 ## Contributing
 
-<<contributors>>Who are the contributors (DONE/BREAK)?
+<<contributors>>Who are the contributors?
 %#contributors#%
 
 ## Tests
 
-<<tests>>What are the tests (DONE/BREAK)?
+<<tests>>What are the tests?
 ```md
 %#tests#%
 ```
