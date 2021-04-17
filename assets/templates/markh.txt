@@ -27,9 +27,9 @@ The app should operate within the following requirements:
 
 ## Installation
 
+<<installSteps>>What are the installation steps (DONE/BREAK)?
 ```md
 The following steps should be used to install:
-<<installSteps>>What are the installation steps (DONE/BREAK)?
 %#installSteps#%
 ```
 
@@ -76,27 +76,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Badges
+
 <<badgeName>>What is Badge Name (DONE/BREAK)?
 <<badgeMessage>>What is Badge Message (DONE/BREAK)?
-![%#badgeName#%](https://img.shields.io/static/v1?label=%3CGT%20Bootcamp%3E&message=%#badgeMessage#%&color=blue)
+![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
 
 ## Features
+
 <<features>>Are there any special features (DONE/BREAK)?
 %#features#%
 
 ## Contributing
 
+<<contributors>>Who are the contributors (DONE/BREAK)?
+%#contributors#%
 
 ## Tests
 
+<<tests>>What are the tests (DONE/BREAK)?
 ```md
-Verify links work:
-1. Enter a city in the _Search_ box and click on the search button (magnifying glass).
-2. You should see the current weather and 5-day forecast for the city entered.
-3. The city you entered should appear in a Searched City History below the _Search_ box.
-4. Clicking a previously searched city will display the current weather and 5-day forecast for this city.
+%#tests#%
 ```
 
-```md
-Verify page layout and that all images display.
-```
