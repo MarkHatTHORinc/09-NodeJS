@@ -1,3 +1,18 @@
+// Templates  use the following rules:
+//   1) Lines that start in position 1 with // are comments and are ignored.
+//   2) Questions start with <<
+//         a) directly after << you should have the place holder name for the anwers
+//            to the Questions
+//         b) after the place holder name @@ designates the type of question (input/list)
+//         c) close the question definition with >> and then list the question
+//         d) input type questions can have multiple answers
+//         e) the user indicates all answers to question are entered by keying DONE
+//         f) if the user keys BREAK, answers are stored to local storage for later use
+//         g) if the user keys STOP, the program halts and produces nothing
+//         h) questions can appear any where in the template
+//   3) Place Holders are used to indicate where answers from questions loaded
+//         a) start with %#
+//         b) end with #% 
 <<projectTitle@@input>>What is your project title?
 # %#projectTitle#%
 
@@ -52,7 +67,7 @@ Trilogy Education Services, LLC, a 2U, Inc. brand
 
 ## License
 
-<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing?
+<<license@@list:[Apache,Academic,GNU,ISC,MIT,Mozilla,Open]>>What is your licensing?
 %#license#% license
 
 Copyright (c) 2021 Mark S. Harrison

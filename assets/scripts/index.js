@@ -155,6 +155,7 @@ async function main() {
     
 
     // Process 6) Write Output file - substitute answers in placeholders
+    console.log('Calling writeOutputFile');
     await fileGenerator.writeOutputFile(fs, outputFile);
 
     //fs.close();

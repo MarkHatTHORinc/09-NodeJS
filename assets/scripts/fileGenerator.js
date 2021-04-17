@@ -55,46 +55,48 @@ async function processTemplate(fs, inputFile) {
 function processLines(lines) {
 
   lines.forEach((line) => {
-    // Qustions start with <<
-    let strPh = line.search("<<");
+    // Comment lines start with "//" in first two positions and will be ignored
+    if (line.substr(0, 2) !== '//') {
+      // Qustions start with <<
+      let strPh = line.search("<<");
 
-    if (strPh >= 0) {
-      strPh += 2;
-      let inqChoice = ' ';
-      let inqMessage = ' ';
-      let inqType = 'input';
-      let ph = '';
-      let endPh = 0;
-      let endMsg = line.length - 2;
-      // Place Holder Id is between << and >>
-      endPh = line.search("@@");
-      // console.log(endPh);
-      // console.log(line);
-      if (endPh <= 0) {
-        // Type of Input not provided
-        endPh = line.search(">>");
-        ph = line.substr(strPh, endPh - strPh);
-      } else {
-        // Type of Input was provided
-        ph = line.substr(strPh, endPh - strPh);
-        let strCh = endPh + 2;
-        endPh = line.search(">>");
-        if (line.substr(strCh, 5) == 'list:') {
-          inqType = 'list'
-          strCh += 5;
-          inqChoice = line.substr(strCh, endPh - strCh)
+      if (strPh >= 0) {
+        strPh += 2;
+        let inqChoice = ' ';
+        let inqMessage = ' ';
+        let inqType = 'input';
+        let ph = '';
+        let endPh = 0;
+        let endMsg = line.length - 2;
+        // Place Holder Id is between << and >>
+        endPh = line.search("@@");
+        if (endPh <= 0) {
+          // Type of Input not provided
+          endPh = line.search(">>");
+          ph = line.substr(strPh, endPh - strPh);
+        } else {
+          // Type of Input was provided
+          ph = line.substr(strPh, endPh - strPh);
+          let strCh = endPh + 2;
+          endPh = line.search(">>");
+          if (line.substr(strCh, 5) == 'list:') {
+            inqType = 'list'
+            strCh += 5;
+            inqChoice = line.substr(strCh, endPh - strCh)
+          }
         }
-      }
 
-      inqMessage = line.substr(endPh + 2, endMsg);
-      inqChoices.push(inqChoice);
-      inqMessages.push(inqMessage);
-      inqTypes.push(inqType);
-      placeholders.push(ph);
-    } else {
-      linesOut.push(line);
+        inqMessage = line.substr(endPh + 2, endMsg);
+        inqChoices.push(inqChoice);
+        inqMessages.push(inqMessage);
+        inqTypes.push(inqType);
+        placeholders.push(ph);
+      } else {
+        linesOut.push(line);
+      }
     }
-  });
+  }
+  );
 
   return true;
 
@@ -124,10 +126,11 @@ async function askQuestions(inquirer) {
                   allAnswers.push(answers);
                   done = 'DONE';
                   break;
-                  case 'STOP':
-                    console.log('\nUser Aborted the generator.')
-                    process.exit(0);
-                  case 'BREAK':
+                case 'STOP':
+                  console.log('\nUser Aborted the generator.')
+                  done = 'ABORT';
+                  process.exit(0);
+                case 'BREAK':
                 // need to add code to write to local storage
                 default:
                   if (value !== '' && value !== undefined) {
@@ -146,7 +149,17 @@ async function askQuestions(inquirer) {
             name: "userInput",
             message: inqMessages[i],
             choices: inqChoice
-          }]);
+          }])
+          .then(value => {
+            console.log(`Before Answers: ${allAnswers}`);
+            console.log(`Before Count: ${allAnswers.length}`);
+            answers.push(value.userInput);
+            console.log(`Elements of answer: ${answers.length}`);
+            allAnswers.push(value.userInput);
+            console.log(`List Value: ${value.userInput}`);
+            console.log(`After Answers: ${allAnswers}`);
+            console.log(`After Count: ${allAnswers.length}`)
+          });
       }
     } while (done === 'RUNNING');
   };
@@ -208,7 +221,7 @@ function replaceData(data) {
 
   // Get first replacement field. The number of its answers will control number of records to write
   strRd = checkForReplaceData(data);
-  if (strRd >= 0) {                   // has substitutions for this data record
+  if (strRd >= 2) {                   // has substitutions for this data record
     replaceDataName = getReplaceDataName(data, strRd);   // controlling place holder
     let x = placeholders.indexOf(replaceDataName);
     // Determine how many answers were entered for this place holder
@@ -227,13 +240,18 @@ function replaceData(data) {
     for (let i = 0; i < loops; i++) {
       let newData = data;
       let hasMore = true;
+      let myCount = 0;
       do {
+        myCount++;
+        if (myCount > 5) process.exit(1);
         strRd = checkForReplaceData(newData);
-        if (strRd >= 0) {           // has substitutions for this data record
+        if (strRd >= 2) {           // has substitutions for this data record
           replaceDataName = getReplaceDataName(newData, strRd);   // controlling place holder
           let x = placeholders.indexOf(replaceDataName);
+          let answers = [];
+          let answer;
           if (x >= 0) {
-            let answers = allAnswers[x];
+            answers = allAnswers[x];
             if (answers === undefined) {
               answers = ["***********"];
             }
@@ -241,22 +259,22 @@ function replaceData(data) {
             answers = ["***********"];
           }
           if (i >= answers.length) {  // We are on a record greater than the number of answers for this place holder
-            let answer = answers[0];  // Default to first answer
+            answer = answers[0];  // Default to first answer
           } else {                    // We have an answer for this record
-            let answer = answers[i];
+            answer = answers[i];
           }
           newData = newData.replace('%#' + replaceDataName + '#%', answer);
         } else {
           hasMore = false;          // this will cause the function to quit looking for substitutions
         }
-      } while (hasMore); 
+      } while (hasMore);
       returnData[i] = newData;
     }
   } else {
     returnData.push(data);          // No replacement data needed, so return the original data back in an array
   }
 
-return returnData;
+  return returnData;
 }
 
 
