@@ -1,16 +1,16 @@
-<<projectTitle@@input>>What is your project title (DONE/BREAK)?
+<<projectTitle@@input>>What is your project title?
 # %#projectTitle#%
 
 ![badge](https://img.shields.io/badge/license-%#license#%-blue)
 
 ## Description
 
-<<description@@input>>What is your project description (DONE/BREAK)?
+<<description@@input>>What is your project description?
 %#description#%
 
 ```md
 The app should operate within the following requirements:
-<<requirements@@input>>What are the project requirements (DONE/BREAK)?
+<<requirements@@input>>What are the project requirements?
 %#requirements#%
 ```
 ## Table of Contents
@@ -27,7 +27,7 @@ The app should operate within the following requirements:
 
 ## Installation
 
-<<installSteps>>What are the installation steps (DONE/BREAK)?
+<<installSteps>>What are the installation steps?
 ```md
 The following steps should be used to install:
 %#installSteps#%

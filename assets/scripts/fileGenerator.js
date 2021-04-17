@@ -116,7 +116,7 @@ async function askQuestions(inquirer) {
           {
             type: "input",
             name: "userInput",
-            message: inqMessages[i],
+            message: inqMessages[i] + " (DONE/BREAK/STOP)",
             validate(value) {
               valueUpper = value.toUpperCase();
               switch (valueUpper) {
@@ -124,7 +124,10 @@ async function askQuestions(inquirer) {
                   allAnswers.push(answers);
                   done = 'DONE';
                   break;
-                case 'BREAK':
+                  case 'STOP':
+                    console.log('\nUser Aborted the generator.')
+                    process.exit(0);
+                  case 'BREAK':
                 // need to add code to write to local storage
                 default:
                   if (value !== '' && value !== undefined) {
@@ -191,6 +194,7 @@ function getReplaceDataName(data, strRd) {
   }
   return replaceDataName;
 }
+
 
 // --------------------------------------------------------------------------------------------------------------
 // Function: replaceData

@@ -25,9 +25,10 @@ const fileGenerator = require('./fileGenerator');
 // Global Variables Section
 // -----------------------------------------------------------------------------
 const baseInputDirectory =
-    '/Users/markh/gt-bootcamp/homework/09-NodeJS/assets/templates/';
+    './assets/templates/';
+//    '/Users/markh/gt-bootcamp/homework/09-NodeJS/assets/templates/';
 const baseOutputDirectory =
-    '/Users/markh/gt-bootcamp/homework/09-NodeJS/output/';
+    './output/';
 const defaultInputFile = 'markh.txt';
 const defaultOutputFile = 'README.md';
 let inputFile = "";
