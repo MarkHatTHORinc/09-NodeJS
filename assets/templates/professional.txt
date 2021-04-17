@@ -1,10 +1,20 @@
 <<projectTitle@@input>>What is your project title (DONE/BREAK)?
+<<description@@input>>What is your project description (DONE/BREAK)?
+<<installSteps>>What are the installation steps (DONE/BREAK)?
+<<usage>>How do you run this (DONE/BREAK)?
+<<contributors>>Who are the contributors (DONE/BREAK)?
+<<contributorsURL>>What are the GitHub links for the contributors (DONE/BREAK)?
+<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
+<<badgeName>>What is Badge Name (DONE/BREAK)?
+<<badgeMessage>>What is Badge Message (DONE/BREAK)?
+<<gitHubUser>>What is your gitHub User Name (DONE/BREAK)?
+<<email>>What is your email address (DONE/BREAK)?
+<<tests>>What are the tests (DONE/BREAK)?
 # %#projectTitle#%
 
 ![license](https://img.shields.io/badge/license-%#license#%-blue)
 
 ## Description
-<<description@@input>>What is your project description (DONE/BREAK)?
 %#description#%
 
 ## Table of Contents (Optional)
@@ -14,13 +24,11 @@
 - [License](#license)
 
 ## Installation
-<<installSteps>>What are the installation steps (DONE/BREAK)?
 ```md
 The following steps should be used to install:
 %#installSteps#%
 ```
 ## Usage
-<<usage>>How do you run this (DONE/BREAK)?
 %#usage#%
     ```md
     <<imageDescription>>What is Image Description (DONE/BREAK)?
@@ -28,28 +36,20 @@ The following steps should be used to install:
     ![%#imageDescription#%](%#imagePath#%)
     ```
 ## Credits
-<<contributors>>Who are the contributors (DONE/BREAK)?
-<<contributorsURL>>What are the GitHub links for the contributors (DONE/BREAK)?
 %#contributors#%   ![%#contributors#%](%#contriubtorsURL#%)
 
 ## License
-<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
 %#license#% license
 
 ## Badges
-<<badgeName>>What is Badge Name (DONE/BREAK)?
-<<badgeMessage>>What is Badge Message (DONE/BREAK)?
 ![%#badgeName#%](https://img.shields.io/static/v1?label=$#badgeName#%&message=%#badgeMessage#%&color=blue)
 
 
 ## Questions 🔍
-<<gitHubUser>>What is your gitHub User Name (DONE/BREAK)?
-<<email>>What is your email address (DONE/BREAK)?
 :octocat: Follow me on GitHub: [%/gitHubUser%/](https://github.com/%#gitHubUser#%)
 ✉️ Contact me: %#email#%
 
 ## Tests  💻
-<<tests>>What are the tests (DONE/BREAK)?
 ```md
 %#tests#%
 ```
