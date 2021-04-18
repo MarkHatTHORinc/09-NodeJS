@@ -21,13 +21,16 @@
 ## Description
 
 <<description@@input>>What is your project description?
+```md
 %#description#%
+```
 
 ```md
 The app should operate within the following requirements:
 <<requirements@@input>>What are the project requirements?
 %#requirements#%
 ```
+
 ## Table of Contents
 
 * [Installation](#installation)
@@ -51,6 +54,7 @@ The following steps should be used to install:
 ## Usage 
 
 <<usageURL>>What are the usage URLs?
+```md
 Navigate to:
 [%#usageURL#%](%#usageURL#%)
 
@@ -58,17 +62,20 @@ Navigate to:
 <<imageDescription>>What is Image Description?
 <<imagePath>>What is Image Path?
 ![%#imageDescription#%](%#imagePath#%)
-
+```
 
 ## Credits
 
+```md
 Trilogy Education Services, LLC, a 2U, Inc. brand
-
+```
 
 ## License
 
 <<license@@list:[Apache,Academic,GNU,ISC,MIT,Mozilla,Open]>>What is your licensing?
+```md
 %#license#% license
+```
 
 Copyright (c) 2021 Mark S. Harrison
 
@@ -94,17 +101,23 @@ SOFTWARE.
 
 <<badgeName>>What is Badge Name?
 <<badgeMessage>>What is Badge Message?
+```md
 ![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
+```
 
 ## Features
 
-<<features>>Are there any special features""?
+<<features>>Are there any special features?
+```md
 %#features#%
+```
 
 ## Contributing
 
 <<contributors>>Who are the contributors?
+```md
 %#contributors#%
+```
 
 ## Tests
 
@@ -113,3 +126,4 @@ SOFTWARE.
 %#tests#%
 ```
 
+_Created by [Generator](#%contributorsURL#%) . 

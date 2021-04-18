@@ -1,10 +1,27 @@
+// Templates  use the following rules:
+//   1) Lines that start in position 1 with // are comments and are ignored.
+//   2) Questions start with <<
+//         a) directly after << you should have the place holder name for the anwers
+//            to the Questions
+//         b) after the place holder name @@ designates the type of question (input/list)
+//         c) close the question definition with >> and then list the question
+//         d) input type questions can have multiple answers
+//         e) the user indicates all answers to question are entered by keying DONE
+//         f) if the user keys BREAK, answers are stored to local storage for later use
+//         g) if the user keys STOP, the program halts and produces nothing
+//         h) questions can appear any where in the template
+//   3) Place Holders are used to indicate where answers from questions loaded
+//         a) start with %#
+//         b) end with #% 
 <<projectTitle@@input>>What is your project title?
 <<description@@input>>What is your project description?
 <<installSteps>>What are the installation steps?
 <<usage>>How do you run this?
+<<imageDescription>>What is Image Description?
+<<imagePath>>What is Image Path?
 <<contributors>>Who are the contributors?
 <<contributorsURL>>What are the GitHub links for the contributors?
-<<license@@list:["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"]>>What is your licensing (DONE when all entered)?
+<<license@@list:[Apache,Academic,GNU,ISC,MIT,Mozilla,Open]>>What is your licensing (DONE when all entered)?
 <<badgeName>>What is Badge Name?
 <<badgeMessage>>What is Badge Message?
 <<gitHubUser>>What is your gitHub User Name?
@@ -15,41 +32,55 @@
 ![license](https://img.shields.io/badge/license-%#license#%-blue)
 
 ## Description
+```md
 %#description#%
+```
 
 ## Table of Contents (Optional)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Badges](#badges)
+- [Questions](#questions)
+- [Tests](#tests)
 
 ## Installation
 ```md
 The following steps should be used to install:
 %#installSteps#%
 ```
+
 ## Usage
 %#usage#%
-    ```md
-    <<imageDescription>>What is Image Description?
-    <<imagePath>>What is Image Path?
+```md
     ![%#imageDescription#%](%#imagePath#%)
-    ```
+```
+
 ## Credits
-%#contributors#%   ![%#contributors#%](%#contriubtorsURL#%)
+```md
+%#contributors#%   ![%#contributors#%](%#contributorsURL#%)
+```
 
 ## License
+```md
 %#license#% license
+```
 
 ## Badges
-![%#badgeName#%](https://img.shields.io/static/v1?label=$#badgeName#%&message=%#badgeMessage#%&color=blue)
-
+```md
+![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
+```
 
 ## Questions 🔍
+```md
 :octocat: Follow me on GitHub: [%/gitHubUser%/](https://github.com/%#gitHubUser#%)
 ✉️ Contact me: %#email#%
+```
 
 ## Tests  💻
 ```md
 %#tests#%
 ```
+
+_Created by [Generator](#%contributorsURL#%) . 

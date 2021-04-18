@@ -9,6 +9,8 @@
 // Date:     April 12, 2021
 // -----------------------------------------------------------------------------
 
+const inquirer = require("inquirer");
+
 // const Choices = require("inquirer/lib/objects/choices");
 
 // -----------------------------------------------------------------------------
@@ -99,7 +101,6 @@ function processLines(lines) {
   );
 
   return true;
-
 }
 
 // --------------------------------------------------------------------------------------------------------------
@@ -109,7 +110,15 @@ function processLines(lines) {
 // Returns:  <boolean> true = success, false = failure
 // --------------------------------------------------------------------------------------------------------------
 async function askQuestions(inquirer) {
-  for (let i = 0; i < inqMessages.length; i++) {
+  
+  let startQuestion = 0;
+  // ** Future Release **
+  // First Check to see if there the user took a break. Data will be stored in localstorage
+  // if (localStorage.getItem("Generator_Questions")) {
+  //   allAnswers = JSON.parse(localStorage.getItem("Generator_Questions"));
+  //   startQuestion = allAnswers.length;
+  // }
+  for (let i = startQuestion; i < inqMessages.length; i++) {
     let answers = [];  // answers to this question
     let done = 'RUNNING';
     do {
@@ -118,7 +127,7 @@ async function askQuestions(inquirer) {
           {
             type: "input",
             name: "userInput",
-            message: inqMessages[i] + " (DONE/BREAK/STOP)",
+            message: inqMessages[i] + " (DONE/STOP)",
             validate(value) {
               valueUpper = value.toUpperCase();
               switch (valueUpper) {
@@ -131,7 +140,11 @@ async function askQuestions(inquirer) {
                   done = 'ABORT';
                   process.exit(0);
                 case 'BREAK':
-                // need to add code to write to local storage
+                  // ** Future Release **
+                  // console.log('\nUser is taking a break. Storing Answers up to this point.')
+                  // localStorage.setItem("Generator_Questions", JSON.stringify(allAnswers));
+                  // done = 'BREAK';
+                  // process.exit(0);
                 default:
                   if (value !== '' && value !== undefined) {
                     answers.push(value);
@@ -151,14 +164,8 @@ async function askQuestions(inquirer) {
             choices: inqChoice
           }])
           .then(value => {
-            console.log(`Before Answers: ${allAnswers}`);
-            console.log(`Before Count: ${allAnswers.length}`);
             answers.push(value.userInput);
-            console.log(`Elements of answer: ${answers.length}`);
             allAnswers.push(value.userInput);
-            console.log(`List Value: ${value.userInput}`);
-            console.log(`After Answers: ${allAnswers}`);
-            console.log(`After Count: ${allAnswers.length}`)
           });
       }
     } while (done === 'RUNNING');
@@ -230,7 +237,11 @@ function replaceData(data) {
       if (answers === undefined) {
         loops = 1;
       } else {
-        loops = answers.length;       // the amount of answers for this place holder will control how many records we write
+        if (inqTypes[x] == 'list') {  // list answers break each letter of work into array
+          loops = 1;
+        } else {
+          loops = answers.length;       // the amount of answers for this place holder will control how many records we write
+        }
       }
     } else {                          // there is a place holder that didn't have a question with answers
       loops = 1;
@@ -243,7 +254,7 @@ function replaceData(data) {
       let myCount = 0;
       do {
         myCount++;
-        if (myCount > 5) process.exit(1);
+        if (myCount > 5) process.exit(1); // Doesn't support more than 5 substitutions per line
         strRd = checkForReplaceData(newData);
         if (strRd >= 2) {           // has substitutions for this data record
           replaceDataName = getReplaceDataName(newData, strRd);   // controlling place holder
@@ -251,17 +262,26 @@ function replaceData(data) {
           let answers = [];
           let answer;
           if (x >= 0) {
-            answers = allAnswers[x];
+            if (inqTypes[x] == 'list') {
+              // answers = allAnswers[x].toString();
+              answers = allAnswers[x].toString();
+            } else {
+              answers = allAnswers[x];
+            }
             if (answers === undefined) {
               answers = ["***********"];
             }
           } else {
             answers = ["***********"];
           }
-          if (i >= answers.length) {  // We are on a record greater than the number of answers for this place holder
+          if (i >= loops) {  // We are on a record greater than the number of answers for this place holder
             answer = answers[0];  // Default to first answer
           } else {                    // We have an answer for this record
+            if (inqTypes[x] == 'list') {
+              answer = answers.toString();
+            } else {
             answer = answers[i];
+            }
           }
           newData = newData.replace('%#' + replaceDataName + '#%', answer);
         } else {

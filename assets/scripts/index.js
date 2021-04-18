@@ -29,7 +29,7 @@ const baseInputDirectory =
 //    '/Users/markh/gt-bootcamp/homework/09-NodeJS/assets/templates/';
 const baseOutputDirectory =
     './output/';
-const defaultInputFile = 'markh.txt';
+const defaultInputFile = 'professional.txt';
 const defaultOutputFile = 'README.md';
 let inputFile = "";
 let outputFile = "";
@@ -41,25 +41,20 @@ let outputFile = "";
 // Returns:  <none> 
 // -----------------------------------------------------------------------------
 function displayDirections() {
-    console.log('              FILE GENERATOR FROM TEMPLATE')
-    console.log(' ')
-    console.log(
-        'This program will generate a stream file based upon a template file.');
-    console.log(
-        'Questions are stored in the template file and will be prompted to the user');
-    console.log(
-        '  to provide substitution in the template. Each question can accept multiple');
-    console.log(
-        '  lines of input.');
-    console.log(
-        'If you are through answering a question enter "DONE" and you will be prompted');
-    console.log(
-        '  for the next question.');
-    console.log(
-        'If you want to take a break and resume later where you left off enter "BREAK.');
-    console.log(
-        'If you want to quit without writing an output file enter "STOP".');
-    console.log(' ');
+    console.log(` 
+                       FILE GENERATOR FROM TEMPLATE
+
+    This program will generate a stream file based upon a template file.
+    Questions are stored in the template file and will be prompted to the user
+    to provide substitution in the template. Each question can accept multiple
+    lines of input.
+    If you are through answering a question enter "DONE" and you will be prompted
+    for the next question.
+    If you want to quit without writing an output file enter "STOP".
+      ** In a future release you will be able to take a break and
+          resume later where you left off enter "BREAK". **
+
+    `);
 }
 
 // -----------------------------------------------------------------------------
@@ -94,6 +89,8 @@ async function checkFile(value) {
 //             4) Process Template - breakout questions and output skeleton
 //             5) Ask Questions - store results in array
 //             6) Write Output file - substitute answers in placeholders
+//             7) Close File Stream
+//             8) Clean up local storage
 // Input:    <>
 // Returns:  <>
 // --------------------------------------------------------------------------------------------------------------
@@ -141,9 +138,9 @@ async function main() {
         } else {
             outputFile = baseOutputDirectory + answer.outputFile;
         }
+    } else {
+        outputFile = baseOutputDirectory + argv[3];
     }
-    console.log(inputFile);
-    console.log(outputFile);
 
 
     // Process 4) Process Template - breakout questions and output skeleton
@@ -158,7 +155,16 @@ async function main() {
     console.log('Calling writeOutputFile');
     await fileGenerator.writeOutputFile(fs, outputFile);
 
-    //fs.close();
+
+    // Process 7) Close File Stream
+    fs.close();
+
+    
+    // Process 8) ** Future Release **
+    //    Clean up local storage (will have to write a function called local storage that writes to disk)
+    // localStorage.removeItem("Generator_Questions");
+
+
     console.log(`${outputFile} has been created.`)
     return;
 }
