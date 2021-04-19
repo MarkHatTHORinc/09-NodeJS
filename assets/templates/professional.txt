@@ -31,12 +31,12 @@
 
 ![license](https://img.shields.io/badge/license-%#license#%-blue)
 
-## Description
+## Description 📰
 ```md
 %#description#%
 ```
 
-## Table of Contents (Optional)
+## Table of Contents 📚
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -45,29 +45,29 @@
 - [Questions](#questions)
 - [Tests](#tests)
 
-## Installation
+## Installation 🚧
 ```md
 The following steps should be used to install:
 %#installSteps#%
 ```
 
-## Usage
+## Usage 🧮
 %#usage#%
 ```md
     ![%#imageDescription#%](%#imagePath#%)
 ```
 
-## Credits
+## Credits 👷
 ```md
 %#contributors#%   ![%#contributors#%](%#contributorsURL#%)
 ```
 
-## License
+## License 📜
 ```md
 %#license#% license
 ```
 
-## Badges
+## Badges 🛡️
 ```md
 ![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
 ```
@@ -83,4 +83,4 @@ The following steps should be used to install:
 %#tests#%
 ```
 
-_Created by [Generator](#%contributorsURL#%) . 
+Created by [Generator](_#%contributorsURL#%_) using _professional_ template.

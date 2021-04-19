@@ -18,7 +18,7 @@
 
 ![badge](https://img.shields.io/badge/license-%#license#%-blue)
 
-## Description
+## Description 📰
 
 <<description@@input>>What is your project description?
 ```md
@@ -31,7 +31,7 @@ The app should operate within the following requirements:
 %#requirements#%
 ```
 
-## Table of Contents
+## Table of Contents 📚
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -43,7 +43,7 @@ The app should operate within the following requirements:
 * [Tests](#tests)
 
 
-## Installation
+## Installation 🚧
 
 <<installSteps>>What are the installation steps?
 ```md
@@ -51,26 +51,26 @@ The following steps should be used to install:
 %#installSteps#%
 ```
 
-## Usage 
+## Usage 🧮
 
 <<usageURL>>What are the usage URLs?
 ```md
 Navigate to:
 [%#usageURL#%](%#usageURL#%)
 
-**Images of App:**
+**Images of App:** 📷
 <<imageDescription>>What is Image Description?
 <<imagePath>>What is Image Path?
 ![%#imageDescription#%](%#imagePath#%)
 ```
 
-## Credits
+## Credits 👷
 
 ```md
 Trilogy Education Services, LLC, a 2U, Inc. brand
 ```
 
-## License
+## License 📜
 
 <<license@@list:[Apache,Academic,GNU,ISC,MIT,Mozilla,Open]>>What is your licensing?
 ```md
@@ -97,7 +97,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Badges
+## Badges 🛡️
 
 <<badgeName>>What is Badge Name?
 <<badgeMessage>>What is Badge Message?
@@ -105,25 +105,25 @@ SOFTWARE.
 ![%#badgeName#%](https://img.shields.io/static/v1?label=%#badgeName#%&message=%#badgeMessage#%&color=blue)
 ```
 
-## Features
+## Features 🛸
 
 <<features>>Are there any special features?
 ```md
 %#features#%
 ```
 
-## Contributing
+## Contributing 👷
 
 <<contributors>>Who are the contributors?
 ```md
 %#contributors#%
 ```
 
-## Tests
+## Tests 💻
 
 <<tests>>What are the tests?
 ```md
 %#tests#%
 ```
 
-_Created by [Generator](#%contributorsURL#%) . 
+Created by [Generator](_#%contributorsURL#%_) using _markh_ template.. 

@@ -3,7 +3,7 @@
 
 ![license](https://img.shields.io/badge/license-ISC-blue)
 
-## Description
+## Description 📰
 ```md
 The application will generate a professional looking output file based upon a template.
 The template will contain the questions to ask the user for variable input.
@@ -11,7 +11,7 @@ The user can enter multiple answers for each question.  When the user has comple
 answered the question they enter DONE.
 ```
 
-## Table of Contents (Optional)
+## Table of Contents 📚
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -20,7 +20,7 @@ answered the question they enter DONE.
 - [Questions](#questions)
 - [Tests](#tests)
 
-## Installation
+## Installation 🚧
 ```md
 The following steps should be used to install:
 1. Load NPM
@@ -28,7 +28,7 @@ The following steps should be used to install:
 3. Load inquirer
 ```
 
-## Usage
+## Usage 🧮
 node ./assets/scripts.index.js
 ```md
     ![Directory Structure](./assets/images/dirstruct.png)
@@ -37,17 +37,17 @@ node ./assets/scripts.index.js
     ![Generated README.md](./assets.readme.png)
 ```
 
-## Credits
+## Credits 👷
 ```md
 Mark Harrison   ![Mark Harrison](https://github.com/MarkHatTHORinc)
 ```
 
-## License
+## License 📜
 ```md
 ISC license
 ```
 
-## Badges
+## Badges 🛡️
 ```md
 ![GT_Bootcamp](https://img.shields.io/static/v1?label=GT_Bootcamp&message=09-NodeJS&color=blue)
 ![Course_Work](https://img.shields.io/static/v1?label=Course_Work&message=09-Homework&color=blue)
@@ -67,4 +67,4 @@ ISC license
 4. Review generated README.md file
 ```
 
-_Created by [Generator](#%contributorsURL#%) . 
+Created by [Generator](_https://github.com/MarkHatTHORinc/09-NodeJS_) using _professional_ template. 
