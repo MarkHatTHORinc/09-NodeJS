@@ -11,8 +11,6 @@
 
 const inquirer = require("inquirer");
 
-// const Choices = require("inquirer/lib/objects/choices");
-
 // -----------------------------------------------------------------------------
 // Global Variables Section
 // -----------------------------------------------------------------------------

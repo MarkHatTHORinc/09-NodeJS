@@ -126,4 +126,4 @@ SOFTWARE.
 %#tests#%
 ```
 
-Created by [Generator](_#%contributorsURL#%_) using _markh_ template.. 
+Created by [Generator](_%#contributorsURL#%_) using _markh_ template.. 

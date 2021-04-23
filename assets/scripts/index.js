@@ -69,7 +69,7 @@ async function checkFile(value) {
     if (value == "" || value === undefined) {
         return true;
     } else {
-        let fileName = baseDirectory + value;
+        let fileName = baseInputDirectory + value;
         let fileExists;
         try {
             fileExists = await fs.access(fileName)
@@ -152,12 +152,12 @@ async function main() {
     
 
     // Process 6) Write Output file - substitute answers in placeholders
-    console.log('Calling writeOutputFile');
     await fileGenerator.writeOutputFile(fs, outputFile);
 
 
     // Process 7) Close File Stream
-    fs.close();
+    // This is not needed since we will not reuse fs and will be reclaimed by program ending
+    //fs.close();
 
     
     // Process 8) ** Future Release **

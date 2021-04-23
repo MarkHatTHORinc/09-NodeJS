@@ -83,4 +83,4 @@ The following steps should be used to install:
 %#tests#%
 ```
 
-Created by [Generator](_#%contributorsURL#%_) using _professional_ template.
+Created by [Generator](_%#contributorsURL#%_) using _professional_ template.
